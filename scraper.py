@@ -57,7 +57,7 @@ for sheetnum in sheetsrange:
     for rownumber in range(15, sheet.nrows):
         print rownumber
         for column in range(1,sheet.ncols):
-          record[str(keys[column])] = str(sheet.row_values(rownumber)[column])
+            record[keys[column]] = str(sheet.row_values(rownumber)[column]) #this breaks because keys cannot be floats: you can use str(keys[column])
         id+=1
         record['id'] = id
         print "---", record
